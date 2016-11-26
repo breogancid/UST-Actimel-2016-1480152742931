@@ -1,67 +1,35 @@
+    <script src="jquery-2.0.3.js"></script>
+       <script type="text/javascript">
+        $(document).ready(function(){
 
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Primera Prueba de Concepto</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-<link rel="stylesheet" href="jquery-mobile.css">
-<script src="jquery-mobile.js"></script>
-</head>
-<body>
-<!-------------- First page for form ----------->
-<div data-role="page">
-<!-------------- First page header ----------->
-<div data-role="header">
-<h1>Primera prueba de concepto</h1>
-</div>
-<!-------------- First page main content ----------->
-<div data-role="main" class="ui-content">
-<form method="post" action="#pageone" data-ajax="false">
-<label for="info">Message:</label>
-<textarea name="addinfo" id="info" placeholder="Message"></textarea>
-<input id="valido" type="submit" data-inline="true" value="Valido" data-theme="b">
-<input id=novalido type="submit" data-inline="true" value="NoValido" data-theme="b">
-</form>
-</div>
-<!-------------------------------------------------------------
-End of First page
--------------------------------------------------------------->
-<!-------------- Second page ----------->
-<div data-role="page" id="pageone">
-<!-------------- Second page header ----------->
-<div data-role="header">
-<h1>Primera prueba de concepto</h1>
-</div>
-<!-------------- Second page main content ----------->
-<div data-role="main" class="ui-content">
-<h2>Enviado!!</h2>
-</div>
-</div>
-<!-------------------------------------------------------------
-End of Second page
--------------------------------------------------------------->
-</body>
-<script>
-$(document).ready(function() {
-$("input[type=submit]").click(function(e) {
-var info = $("#info").val();
-if (info == '') {
-e.preventDefault();
-alert("esta vacio julandron");
-}
-});
-});
-$('#valido').click(function () {
-alert("valido"); //some jquery
- })
- $('#novalido').click(function () {
- alert("novalido"); //some jquery
-  })
+          $.getJSON("drpdwn.php", success = function(data){
 
-</script>
+        var items="";
+            for(var i = 0; i< data.length; i++){
+               items +="<option value='"+ data[i].toLowerCase() +"'>" + data[i] +"</option>";
+            }
+            $("#a1_title").append(items); 
+            $("#a1_title").change();
+          });
 
-</html>
+
+        $("#a1_title").change(function(){
+        $("#a2_title").html("");
+
+          $.getJSON("second_dropdown.php?tabs="+ $(this).val(),success = function(data){
+        alert("okay");
+           var items="";
+           for(var i = 0; i< data.length; i++){
+              items+="<option value='"+data[i].toLowerCase()+"'>"+data[i]+"</option>";
+
+            }
+
+            $("#a2_title").append(items); 
+          });
+        });
+
+        });
+        </script>
+        </body>
+        </html>
