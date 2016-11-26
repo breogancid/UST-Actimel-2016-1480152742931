@@ -6,3 +6,4 @@ applications:
   name: UST Actimel 2016
   host: UST-Actimel-2016
   disk_quota: 1024M
+  command: node app.js
