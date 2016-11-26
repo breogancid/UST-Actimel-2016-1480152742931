@@ -1,7 +1,8 @@
 {
 	"plugins": {
 		"node": {},
-		"express": {}
+		"express": {},
+		"postgres": {}
 	},
 	"ecmaVersion": 6,
 	"libs": [
