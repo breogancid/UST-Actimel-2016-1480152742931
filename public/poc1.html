@@ -20,14 +20,14 @@
 </div>
 <!-------------- First page main content ----------->
 <div data-role="main" class="ui-content">
-<form method="post" action="#pageone" data-ajax="false">
+<form method="post" action="enviardatos">
   <label for="info">Mensaje 1:</label>
-  <textarea name="addinfo" id="info" placeholder="Hola"></textarea>
+  <input name="mensaje1" id="mensaje1" placeholder="Hola"></input>
   <label for="info">Mensaje 2:</label>
-  <textarea name="addinfo" id="info" placeholder="Mundo"></textarea>
+  <input name="mensaje2" id="mensaje2" placeholder="Mundo"></input>
 
 <input id="valido" type="submit" data-inline="true" value="Valido" data-theme="b">
-<input id=novalido type="submit" data-inline="true" value="NoValido" data-theme="b">
+<input id="novalido" type="submit" data-inline="true" value="NoValido" data-theme="b">
 </form>
 </div>
 <!-------------------------------------------------------------
@@ -49,21 +49,6 @@ End of Second page
 -------------------------------------------------------------->
 </body>
 <script>
-$(document).ready(function() {
-$("input[type=submit]").click(function(e) {
-var info = $("#info").val();
-if (info == '') {
-e.preventDefault();
-alert("esta vacio julandron");
-}
-});
-});
-$('#valido').click(function () {
-alert("valido"); //some jquery
- })
- $('#novalido').click(function () {
- alert("novalido"); //some jquery
-  })
 
 </script>
 
