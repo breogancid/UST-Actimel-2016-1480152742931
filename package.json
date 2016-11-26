@@ -7,8 +7,10 @@
 	},
 	"dependencies": {
 		"express": "4.13.x",
-		"cfenv": "1.0.x"
+		"cfenv": "1.0.x",
+		"socket.io":"1.6.0"
 	},
+	
 	"repository": {},
 	"engines": {
 		"node": "4.x"
