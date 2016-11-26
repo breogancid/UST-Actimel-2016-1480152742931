@@ -1,0 +1,8 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: mybluemix.net
+  name: UST Actimel 2016
+  host: UST-Actimel-2016
+  disk_quota: 1024M
