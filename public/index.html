@@ -31,24 +31,12 @@
     </select>
   </div>
 <input id="acceder" type="submit" data-inline="true" value="Acceder" data-theme="b">
-</form>
 </div>
 <!-------------------------------------------------------------
 End of First page
 -------------------------------------------------------------->
 <!-------------- Second page ----------->
-<div data-role="page" id="pageone">
-<!-------------- Second page header ----------->
-<div data-role="header">
-<h1>Primera prueba de concepto</h1>
-</div>
-<!-------------- Second page main content ----------->
 
-</div>
-<!-------------------------------------------------------------
-End of Second page
--------------------------------------------------------------->
-</body>
 <script>
 $(document).ready(function() {
   $('#acceder').click(function () {
@@ -56,19 +44,19 @@ $(document).ready(function() {
     var seleccionado = getSelected();
     switch (seleccionado) {
       case 'poc1':
-      window.location.href = "https://ust-actimel-2016.mybluemix.net/poc1.html";
+      window.location.href = "poc1.html";
    break;
    case 'poc2':
-   window.location.href = "https://ust-actimel-2016.mybluemix.net/poc2.html";
+   window.location.href = "poc2.html";
 break;
 case 'poc3':
-window.location.href = "https://ust-actimel-2016.mybluemix.net/poc3.html";
+window.location.href = "poc3.html";
 break;
 case 'poc4':
-window.location.href = "https://ust-actimel-2016.mybluemix.net/poc4.html";
+window.location.href = "poc4.html";
 break;
 case 'poc4':
-window.location.href = "https://ust-actimel-2016.mybluemix.net/poc5.html";
+window.location.href = "poc5.html";
 break;
 	default:
 		alert('Aun no existe esa PoC');
