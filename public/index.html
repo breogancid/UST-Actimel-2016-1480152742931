@@ -1,26 +1,99 @@
+
+
 <!DOCTYPE html>
 <html>
+<head>
+<title>Primera Prueba de Concepto</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<link rel="stylesheet" href="jquery-mobile.css">
+<script src="jquery-mobile.js"></script>
+</head>
+<body>
+<!-------------- First page for form ----------->
+<div data-role="page">
+<!-------------- First page header ----------->
+<div data-role="header">
+<h1>Lanzador de Pruebas de concepto</h1>
+</div>
+<!-------------- First page main content ----------->
+<div data-role="main" class="ui-content">
 
-  <head>
-    <title>NodeJS Starter Application</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="stylesheets/style.css">
-  </head>
+  <div class="ui-field-contain">
+    <label for="select-choice-1" class="select">Pruebas de concepto</label>
+    <select name="select-choice-1" id="seleccionable">
+      <option value="poc1">PoC1</option>
+      <option value="poc2">PoC2</option>
+      <option value="poc3">PoC3</option>
+      <option value="poc4">PoC4</option>
+      <option value="poc5">PoC5</option>
+      <option value="poc6">PoC6</option>
+      <option value="poc7">PoC7</option>
 
-  <body>
-    <table>
-      <tr>
-        <td style= "width:30%;">
-          <img class = "newappIcon" src="images/newapp-icon.png">
-        </td>
-        <td>
-          <h1 id="message">Hello World!</h1>
-          <p class='description'></p> Thanks for creating a <span class = "blue">NodeJS Starter Application</span>.
-        </td>
-      </tr>
-    </table>
-  </body>
+    </select>
+  </div>
+<input id="acceder" type="submit" data-inline="true" value="Acceder" data-theme="b">
+</form>
+</div>
+<!-------------------------------------------------------------
+End of First page
+-------------------------------------------------------------->
+<!-------------- Second page ----------->
+<div data-role="page" id="pageone">
+<!-------------- Second page header ----------->
+<div data-role="header">
+<h1>Primera prueba de concepto</h1>
+</div>
+<!-------------- Second page main content ----------->
+<div data-role="main" class="ui-content">
+<h2>Enviado!!</h2>
+</div>
+</div>
+<!-------------------------------------------------------------
+End of Second page
+-------------------------------------------------------------->
+</body>
+<script>
+$(document).ready(function() {
+  $('#acceder').click(function () {
+
+    var seleccionado = getSelected();
+    switch (seleccionado) {
+      case 'poc1':
+      window.location.href = "https://ust-actimel-2016.mybluemix.net/poc1.html";
+   break;
+   case 'poc2':
+   window.location.href = "https://ust-actimel-2016.mybluemix.net/poc2.html";
+break;
+case 'poc3':
+window.location.href = "https://ust-actimel-2016.mybluemix.net/poc3.html";
+break;
+case 'poc4':
+window.location.href = "https://ust-actimel-2016.mybluemix.net/poc4.html";
+break;
+case 'poc4':
+window.location.href = "https://ust-actimel-2016.mybluemix.net/poc5.html";
+break;
+	default:
+		alert('Aun no existe esa PoC');
+    
+}
+
+   }
+
+ )
+
+});
+ function getSelected(){
+
+var result=$( "#seleccionable" ).val();
+
+   return result;
+ }
+
+
+</script>
 
 </html>
